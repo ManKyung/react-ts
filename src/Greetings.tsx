@@ -1,14 +1,20 @@
 import React from 'react';
 
-type GreetingProps = {
+interface GreetingProps {
   name: string;
   mark: string;
-};
+  optional?: string;
+  onClick: (name: string) => void;
+}
 
-const Greetings = ({ name, mark }: GreetingProps) => {
+const Greetings = ({ name, mark, optional, onClick }: GreetingProps) => {
+  const handleClick = () => onClick(name);
   return (
     <div>
-      Hello, {name} {mark}
+      Hello, {name} {mark} {optional && <p>optional</p>}
+      <div>
+        <button onClick={handleClick}>Click me</button>
+      </div>
     </div>
   );
 };

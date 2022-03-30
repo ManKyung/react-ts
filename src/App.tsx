@@ -4,11 +4,14 @@ import './App.css';
 import Greetings from './Greetings';
 
 const App: React.FC = () => {
+  const onClick = (name: string) => {
+    console.log(name);
+  };
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <Greetings name={'mk.jung'} />
+        <Greetings name={'mk.jung'} onClick={onClick} />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
