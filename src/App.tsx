@@ -1,12 +1,14 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Greetings from './Greetings';
 
-function App() {
+const App: React.FC = () => {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
+        <Greetings name={'mk.jung'} />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
@@ -21,6 +23,6 @@ function App() {
       </header>
     </div>
   );
-}
+};
 
 export default App;
