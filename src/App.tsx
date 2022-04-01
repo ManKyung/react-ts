@@ -5,6 +5,7 @@ import Greetings from './Greetings';
 import Counter from './Counter';
 import MyForm from './MyForm';
 import ReducerSample from './ReducerSample';
+import { SampleProvider } from './ContextSample';
 
 const App: React.FC = () => {
   const onClick = (name: string) => {
@@ -16,7 +17,9 @@ const App: React.FC = () => {
   return (
     <div className="App">
       <header className="App-header">
-        <ReducerSample />
+        <SampleProvider>
+          <ReducerSample />
+        </SampleProvider>
         <MyForm onSubmit={onSubmit} />
         <img src={logo} className="App-logo" alt="logo" />
         <Greetings name={'mk.jung'} onClick={onClick} />

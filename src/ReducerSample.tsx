@@ -1,4 +1,5 @@
 import React, { useReducer } from 'react';
+import { useSampleState, useSampleDispatch } from './ContextSample';
 
 type Color = 'red' | 'orange' | 'yellow';
 
@@ -43,17 +44,20 @@ const reducer = (state: State, action: Action) => {
 };
 
 const ReducerSample = () => {
-  const [state, dispacth] = useReducer(reducer, {
-    count: 0,
-    text: 'hello',
-    color: 'red',
-    isGood: true,
-  });
+  // const [state, dispacth] = useReducer(reducer, {
+  //   count: 0,
+  //   text: 'hello',
+  //   color: 'red',
+  //   isGood: true,
+  // });
 
-  const setCount = () => dispacth({ type: 'SET_COUNT', count: 5 });
-  const setText = () => dispacth({ type: 'SET_TEXT', text: 'bye' });
-  const setColor = () => dispacth({ type: 'SET_COLOR', color: 'yellow' });
-  const toggleGood = () => dispacth({ type: 'TOGGLE_GOOD' });
+  const state = useSampleState();
+  const dispatch = useSampleDispatch();
+
+  const setCount = () => dispatch({ type: 'SET_COUNT', count: 5 });
+  const setText = () => dispatch({ type: 'SET_TEXT', text: 'bye' });
+  const setColor = () => dispatch({ type: 'SET_COLOR', color: 'yellow' });
+  const toggleGood = () => dispatch({ type: 'TOGGLE_GOOD' });
 
   return (
     <div>
